@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>
+		<style type="text/css">
+			#btn_zhuxiao{
+				position: fixed;
+				right:30px;
+				top: 60px;
+				padding: 10px 20px;
+				border-radius: 5px;
+				border: 0;
+				font-size: 18px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">我的信息</div>
+		<button id="btn_zhuxiao">注销</button>
+	</body>
+	<script type="text/javascript">
+		var zhuxiao = document.getElementById("btn_zhuxiao");
+		zhuxiao.onclick=function(){
+
+			var params = {token:window.parent.parent.window.token};
+			window.parent.parent.window.requestURL('exit',params,function(data){
+				if(data.success == 1){
+					window.parent.parent.window.myIframe.src="html/login.html";
+					localStorage.setItem('token','');
+				}else {
+					alert(data.message[data.state]);
+					alert(params.token);
+				}
+			});
+
+		}
+	</script>
+	
+</html>

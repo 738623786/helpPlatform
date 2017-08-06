@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>新增帮助</title>
+		<link rel="stylesheet" type="text/css" href="../css/css.css" />
+		<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css" />
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=QZwahqo8G3xTT4EcG1yy9GuNmaU9avKv&s=1"></script>
+		<style type="text/css">
+			#div_sela:after,
+			#div_selb:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			#div_sela div,
+			#div_selb div {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="div_out1" id="btn_backa"><i class="iconfont icon-jiantou2"></i></div>
+			新增帮助
+		</div>
+		<div class="main_newhelp flex">
+			<div class="section_new1">
+				<div class="div1 flex">
+					<div>联系方式：</div>
+					<div>
+						<select name="" id='tel'>
+						</select>
+					</div>
+				</div>
+				<div class="div2 flex">
+					<div>帮助类型：</div>
+					<div class="list flex" id="helpType">
+						<div class="item"><input type="radio" name="type" value="1" checked/>类型1</div>
+						<div class="item"><input type="radio" name="type" value="2" />类型2</div>
+						<div class="item"><input type="radio" name="type" value="3" />类型3</div>
+						<div class="item"><input type="radio" name="type" value="4" />类型4</div>
+						<div class="item"><input type="radio" name="type" value="5" />类型5</div>
+						<div class="item"><input type="radio" name="type" value="6" />类型6</div>
+						<div class="item"><input type="radio" name="type" value="7" />类型7</div>
+						<div class="item"><input type="radio" name="type" value="8" />类型8</div>
+					</div>
+				</div>
+			</div>
+			<div class="section_new2">
+				<textarea name="" placeholder="请输入请求帮助的内容" id="textarera11"></textarea>
+				<div class="img_box">
+					<div class="div_add"><span></span><span></span></div>
+				</div>
+			</div>
+			<div class="section_new3">
+				<div class="div1 flex">
+					<div>偿付方式：</div>
+					<div>
+						<select name="" id="sec_qiehuan">
+							<option value="1" id="qiehuan_dou">帮助豆</option>
+							<option value="2" id="qiehuan_rmb">现金</option>
+						</select>
+					</div>
+				</div>
+				<div class="div2" id="div_sela">
+					<div>帮助豆：</div>
+					<div>
+						<select name="" id="pulse_sec">
+							<option value="0">0枚</option>
+							<option value="1">1枚</option>
+							<option value="2">2枚</option>
+							<option value="3">3枚</option>
+							<option value="4">4枚</option>
+							<option value="5">5枚</option>
+							<option value="6">6枚</option>
+							<option value="7">7枚</option>
+							<option value="8">8枚</option>
+						</select>
+
+					</div>
+				</div>
+
+				<div class="div2 flex" style="display: none" id="div_selb">
+					<div>现金：</div>
+					<div>
+						<select name="" id="rmb_sec">
+							<option value="1">1元</option>
+							<option value="2">2元</option>
+							<option value="3">3元</option>
+							<option value="4">4元</option>
+							<option value="5">5元</option>
+							<option value="6">6元</option>
+							<option value="7">7元</option>
+							<option value="8">8元</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="div3 flex">
+					<div>帮助方式：</div>
+					<div>
+						<select name="">
+							<option value="" selected="selected">请求帮忙</option>
+							<option value="">地点询问</option>
+						</select>
+					</div>
+				</div>
+				<div class="div4 flex">
+					<div>您的位置：</div>
+					<div>
+						<input type="text" name="" id="input_add" value="位置获取中，请稍候..." disabled="disabled" />
+						<button id="btn_sec">手选</button>
+					</div>
+				</div>
+			</div>
+			<div class="section_new4">
+				<div class="sec1 flex">
+					<div class="div1">
+						<div>搜索范围：</div>
+						<div>
+							<select name="" disabled="disabled">
+								<option value="">1km内(默认)</option>
+								<!--<option value="">地点询问</option>-->
+							</select>
+						</div>
+					</div>
+					<div class="div2">
+						<div>信誉度：</div>
+						<div>
+							<select name="" disabled="disabled">
+								<option value="">全部(默认)</option>
+								<option value="">地点询问</option>
+							</select>
+						</div>
+					</div>
+					<div class="div3">
+						<div>评价：</div>
+						<div>
+							<select name="" disabled="disabled">
+								<option value="">全部(默认)</option>
+							</select>
+						</div>
+					</div>
+					<div class="div4">
+						<button id="btn_seco">筛选</button>
+					</div>
+				</div>
+				<div class="sec2">
+					<button id="btn_sub">提交</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/jquery-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/newhelp.js"></script>
+
+	</body>
+
+</html>

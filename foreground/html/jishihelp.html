@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../css/jishihelp.css" />
+		<script src="../js/juicer.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div class="section1">
+			<input type="radio" name="check" id="" value="" checked="checked" />默认<input type="radio" name="check" id="" value="" />自定义
+
+		</div>
+		<div class="section2 container">
+			<div class="row">
+				<div class="col-xs-3 flex">
+
+					<span>距离</span>
+					<select name="">
+						<option value="">0.5km</option>
+						<option value="">0.6km</option>
+						<option value="">0.7km</option>
+						<option value="">0.8km</option>
+						<option value="">0.9km</option>
+						<option value="" selected="selected">1.0km</option>
+						<option value="">1.1km</option>
+						<option value="">1.2km</option>
+						<option value="">1.3km</option>
+						<option value="">1.4km</option>
+					</select>
+				</div>
+				<div class="col-xs-3 flex">
+					<span>时间</span>
+					<select name="">
+						<option value="">0.5km</option>
+						<option value="">0.6km</option>
+						<option value="">0.7km</option>
+						<option value="">0.8km</option>
+						<option value="">0.9km</option>
+						<option value="" selected="selected">1.0km</option>
+						<option value="">1.1km</option>
+						<option value="">1.2km</option>
+						<option value="">1.3km</option>
+						<option value="">1.4km</option>
+					</select>
+				</div>
+				<div class="col-xs-2">
+					<select name="">
+						<option value="" disabled="disabled">性别选择</option>
+						<option value="">男</option>
+						<option value="">女</option>
+						<option value="" selected="selected">不限</option>
+
+					</select>
+				</div>
+				<div class="col-xs-2 flex">
+					<span>年龄</span>
+					<select name="">
+						<option value="" disabled="disabled">最小年龄限制</option>
+						<option value="" selected="selected">不限</option>
+						<option value="">12</option>
+						<option value="">13</option>
+						<option value="">14</option>
+						<option value="">15</option>
+						<option value="">16</option>
+						<option value="">17</option>
+						<option value="">18</option>
+						<option value="">19</option>
+						<option value="">20</option>
+						<option value="">19</option>
+						<option value="">19</option>
+						<option value="">19</option>
+						<option value="">19</option>
+						<option value="">19</option>
+					</select><span>-</span></div>
+				<div class="col-xs-2 flex">
+					<select name="">
+						<option value="" disabled="disabled">最大年龄限制</option>
+						<option value="" selected="selected">不限</option>
+						<option value="">12</option>
+						<option value="">13</option>
+						<option value="">14</option>
+						<option value="">15</option>
+						<option value="">16</option>
+						<option value="">17</option>
+						<option value="">18</option>
+						<option value="">19</option>
+						<option value="">20</option>
+						<option value="">19</option>
+						<option value="">19</option>
+						<option value="">19</option>
+						<option value="">19</option>
+						<option value="">19</option>
+					</select><span>岁</span></div>
+
+			</div>
+		</div>
+		<div id="receivhelp_list">
+		
+		</div>
+			<!--<div class="section3 flex">
+
+				<div class="div_left">
+					<img src="../img/11.png" />
+					<div class="div1">
+						<span>👤</span>
+						<span>昵称</span>
+						<span>已实名</span>
+					</div>
+					<div class="div2">
+						帮助豆<span>2枚</span>
+					</div>
+					<div class="div3">不知道该怎么办，很无助</div>
+					<div id="phone_hidden">电话号码：15978808713</div>
+
+				</div>
+				<div class="div_right">
+					<div class="div4" id="daytime">2017</div>
+					<div class="div5">1.2公里</div>
+
+					<div class="div6"><input type="button" name="" id="refuse" value="拒绝" />
+						<div id="hidden">已接受</div>
+					</div>
+					<div class="div7"><input type="button" name="" id="gohelp" value="去帮助" />
+						<input type="button" name="" id="hidden_Two" value="强行取消" />
+					</div>
+				</div>
+			</div>-->
+		<script id="receive_tpl" type="text/template">
+			<ul>
+				{@each list as item}
+				<li>
+					<div class="section3 flex">
+						<div class="div_left">
+							<img src="../img/11.png" />
+							<div class="div1">
+								<span>👤</span>
+								<span>${item[1].name}</span>
+								<span>已实名</span>
+							</div>
+							<div class="div2">
+								帮助豆${item[0].consume_Pulse_Count}枚</span>
+							</div>
+							<div class="div3">${item[0].request_Text}</div>
+							{@if item[0].request_State}
+							<div class="phone">电话号码：${item[1].tel}</div>
+							{@/if}
+						</div>
+						<div class="div_right">
+							<div class="div4">${item[0].send_Request_Time}</div>
+							<div class="div5">${item[0].distance/1000}公里</div>
+
+							{@if !item[0].request_State}
+							<div class="div6">
+								<input type="button" name="" class="refuse" value="拒绝" />
+								<div class="yon display_none">已接受</div>
+							</div>
+							<div class="div7">
+								<input type="button" name="" class="gohelp" value="去帮助" />
+								<input type="button" name="" class="two display_none" value="强行取消" />
+							</div>
+							{@else}
+							<div class="div6">
+								<input type="button" name="" class="refuse display_none" value="拒绝" />
+								<div class="yon">已接受</div>
+							</div>
+							<div class="div7">
+								<input type="button" name="" class="gohelp display_none" value="去帮助" />
+								<input type="button" name="" class="two" value="强行取消" />
+							</div>
+							{@/if}
+						</div>
+					</div>
+				</li>
+				{@/each}
+			</ul>
+
+		</script>
+
+		<script src="../js/jquery-min.js"></script>
+		<script src="../js/help.js"></script>
+	</body>
+
+</html>

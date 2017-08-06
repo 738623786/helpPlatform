@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/css.css" />
+
+	</head>
+	<style type="text/css">
+		html,
+		body {
+			height: 100%;
+		}
+		
+		body {
+			display: flex;
+			flex-direction: column;
+		}
+
+	</style>
+
+	<body>
+		
+		<div class="index_header header">
+			<ul style="white-space: nowrap;">
+				<li id="li_jishi">及时帮助
+					<div class="hidden_bottom"></div>
+				</li>
+				<li id="li_history">帮助历史
+					<div class="hidden_bottom"></div>
+				</li>
+				<li id="li_share">帮助分享
+					<div class="hidden_bottom"></div>
+				</li>
+				<li id="li_list">排行榜
+					<div class="hidden_bottom"></div>
+				</li>
+			</ul>
+		</div>
+		<iframe src="jishihelp.html" id="main_help"></iframe>
+
+		<script src="../js/jquery-min.js"></script>
+		<script type="text/javascript">
+			//
+			window.onload = function() {
+				var li_jishi = document.getElementById("li_jishi");
+				var li = document.getElementsByClassName("hidden_bottom");
+				var srca = document.getElementById("main_help");
+				li_jishi.onclick = function(e) {
+
+					
+					if(srca.getAttribute("src") == "jishihelp.html") {
+						return false;
+					}
+					
+					srca.setAttribute("src", "jishihelp.html");
+					//li[1].style.display = "none";
+					$(".hidden_bottom").css({"display":"none"});
+				
+					li[0].style.display = "block";
+
+				}
+
+				var li_history = document.getElementById("li_history");
+				li_history.onclick = function(e) {
+
+					if(srca.getAttribute("src") == "helphistory.html") {
+						return false;
+					}
+					srca.setAttribute("src", "helphistory.html")
+					$(".hidden_bottom").css({"display":"none"})
+					li[1].style.display = "block";
+
+				}
+				
+				var share = document.getElementById("li_share");
+				
+				share.onclick = function(e) {
+
+					if(srca.getAttribute("src") == "helpshare.html") {
+						return false;
+					}
+					srca.setAttribute("src", "helpshare.html")
+					$(".hidden_bottom").css({"display":"none"})
+					li[2].style.display = "block";
+
+				}
+				var li_list = document.getElementById("li_list");
+				li_list.onclick = function(e) {
+
+					if(srca.getAttribute("src") == "helplist.html") {
+						return false;
+					}
+					srca.setAttribute("src", "helplist.html")
+					$(".hidden_bottom").css({"display":"none"})
+					li[3].style.display = "block";
+
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

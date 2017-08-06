@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/css.css" />
+		<link rel="stylesheet" type="text/css" href="../css/font1/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css" />
+		<style type="text/css">
+			.icon-tianjia {
+				font-size: 21px;
+			}
+			
+			.pl_help {
+				padding: 7px;
+				border-bottom: 1px solid #ccc;
+				background-color: lemonchiffon;
+				margin-bottom: 8px;
+			}
+			
+			.div_out {
+				position: absolute;
+				right: 0px;
+				width: 55px;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+
+		<script src="../js/juicer.js"></script>
+
+	</head>
+
+	<body>
+		<div class="header">请求帮助
+			<div class="div_out"><i class="iconfont icon-tianjia"></i></div>
+		</div>
+
+		<div id="helps">
+
+		</div>
+
+		<script id='help_list' type="text/template">
+			<ul>
+				{@each list as item}
+				<li class="pl_help">
+					<div class="pl_sec flex">
+						<div class="itemTime"> ${item[0].send_Request_Time}</div>
+						<div class="itemDistance">距离：${item[0].distance/1000}公里内</div>
+					</div>
+					<div class="pl_textArea">${item[0].request_Text}</div>
+
+					{@if item[0].money==0}
+					<div class="pl_pulse">帮助豆:${item[0].consume_Pulse_Count}枚</div>
+					{@else}
+					<div class="pl_cash">现金:${item[0].money}元</div>
+					{@/if}
+
+					{@if item.length>1}
+					<div class="pl_person">帮助人：${item[1].name}</div>
+					<div class="pl_tel">联系方式：<span class="iconfont icon-dianhua"></span>${item[1].tel}</div>
+					{@/if}
+
+					<button class="pl_quxiao">强行取消</button>
+				</li>
+				{@/each}
+
+			</ul>
+		</script>
+
+
+		<script src="../js/jquery-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pleasehelp.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

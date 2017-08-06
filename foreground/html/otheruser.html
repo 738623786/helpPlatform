@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查看其它用户信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css"/>
+		<script src="../js/jquery-min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body class="body_infor">
+		<div class="div_top"><img src="../img/22.png"/></div>
+		<div class="table section_other">
+			<div class="row">
+				<div class="cell">昵称</div>
+				<div class="cell">爱心工程</div>
+			</div>
+			<div class="row">
+				<div class="cell">性别</div>
+				<div class="cell">男</div>
+			</div>
+			<div class="row">
+				<div class="cell">年龄</div>
+				<div class="cell">23岁</div>
+			</div>
+			<div class="row">
+				<div class="cell">签名</div>
+				<div class="cell"></div>
+			</div>
+			<div class="row">
+				<div class="cell">爱好</div>
+				<div class="cell"></div>
+			</div>
+			<div class="row">
+				<div class="cell">实名认证</div>
+				<div class="cell">已实名<span><i class="iconfont icon-jiantou"></i></span></div>
+			</div>
+			<div class="row">
+				<div class="cell">信誉度</div>
+				<div class="cell">20点</div>
+			</div>
+			<div class="row">
+				<div class="cell">评价得分</div>
+				<div class="cell">8.5分
+					<span><i class="iconfont icon-wujiaoxing"></i></span>
+					<span><i class="iconfont icon-wujiaoxing"></i></span>
+					<span><i class="iconfont icon-wujiaoxing"></i></span>
+					<span><i class="iconfont icon-wujiaoxing"></i></span>
+					<span><i class="iconfont icon-wujiaoxingo"></i></span>
+				</div>
+			</div>
+			<div class="row"  id="phone_help">
+				<div  >电话：18848962921</div>
+			</div>
+		</div>
+		<div class="div_bot">
+			<button type="button" id="button4">去帮助</button>
+		</div>
+		<script type="text/javascript">
+			
+			$("#button4").click(function(){
+				//$(this).innerHTML="sss";
+				document.getElementById("button4").innerHTML="已接受";
+				//$(this).animate({left:20px});
+				var a=document.getElementById("phone_help");
+				a.style.visibility="visible";
+			
+			})
+		</script>
+		
+	</body>
+</html>
